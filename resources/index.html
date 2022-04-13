@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypt of Carnage</title>
+    <title>Crypt of Carnage - The Maze</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/style.css" />
     <img src="images/bg.png" alt="error" width="100%" height="100%">
@@ -15,22 +15,27 @@
     <h1>Crypt of Carnage</h1>
     <div class="after">
         <h3>Game Over</h3>
-        <button class="play-again" id="submit">Play Again</button>
+        <p id="steps"></p>
+          <input id="okBtn" type="button" onclick="toggleVisablity('Message-Container')" value="Play again" />
         <button class="quit" id="submit">Quit</button>
         <input id="restart" type="button" onclick="" value="Restart" />
     </div>
 
-    <form id="controls" action="">
-        <p>Level</p>
-        <input id="size" type="number" value="200" /></br>
-        <p>Rows/Columns</p>
-        <input id="number" type="number" value="10" /></br>
-        <input id="submit" type="submit" value="Start">
-    </form>
+    <div id="controls">
+        <div class="levels">
+          <select id="df" type="button">
+                    <option value="10">Beginner</option>
+                    <option value="15">Easy</option>
+                    <option value="25">Normal</option>
+                    <option value="38">Hard</option>                                      
+                </select>
+            <input id="submit" type="submit" value="Start">
+        </div>        
+    </div>
 
     <canvas class="maze"></canvas>
 
-    <script src=""></script>
+    <script src="js/logic.js"></script>
 </body>
 
 </html>
