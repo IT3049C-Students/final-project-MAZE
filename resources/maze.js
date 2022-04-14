@@ -141,4 +141,32 @@ class Cell {
         ctx.fillStyle = "#ffbb00";
         ctx.fillRect(x, y, this.parentSize / columns - 3, this.parentSize / columns - 3);
     }
+
+    removeWalls(cell1, cell2) {
+        let x = cell1.colNum - cell2.colNum;
+        if (x === 1) {
+            cell1.walls.leftWall = false;
+            cell2.walls.rightWall = false;
+        } else if (x ===-1) {
+            cell1.walls.rightWall = false;
+            cell2.walls.leftWall = false;
+        }
+    }
+
+    show(size, rows, columns) {
+        let x = (this.colNum * size) / columns;
+        let y = (this.rowNum * size) / rows;
+
+        ctx.strokeStyle = "#ffbb00";
+        ctx.fillStyle = "black";
+        ctx.lineWidth = 2;
+        if (this.walls.topWall) this.drawTopWall(x, y, size, columns, rows);
+        if (this.walls.rightWall) this.drawRightWall(x, y, size, columns, rows);
+        if (this.walls.leftWall) this.drawLeftWall(x, y, size, columns, rows);
+        if (this.walls.bottomWall) this.drawBottomWall(x, y, size, columns, rows);
+        if (this.goal) {
+            ctx.fillStyle = "red";
+            ctx.fillRect(x + 1, y + 1, size / columns -2, size / rows - 2);
+        }
+    }
 }
