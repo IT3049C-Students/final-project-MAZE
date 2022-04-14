@@ -5,31 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href="/resources/css/style.css">
-    <title>Crypt of Carnage</title>
+    <title>Crypt of Carnage - The Maze</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css" />
+    <img src="images/bg.png" alt="error" width="100%" height="100%">
 </head>
 
 <body>
     <h1>Crypt of Carnage</h1>
     <div class="after">
         <h3>Game Over</h3>
-        <button class="play-again" id="submit">Play Again</button>
+        <p id="steps"></p>
+          <input id="okBtn" type="button" value="Play again" />
         <button class="quit" id="submit">Quit</button>
+        <input id="restart" type="button" onclick="" value="Restart" />
     </div>
 
-    <form id="controls" action="">
-        <p>Level</p>
-        <input id="size" type="number" value="200" /></br>
-        <p>Rows/Columns</p>
-        <input id="number" type="number" value="10" /></br>
-        <input id="submit" type="submit" value="Start">
-    </form>
-    <input id="restart" type="button" onclick="" value="Restart" />
+    <div id="controls">
+        <form id="df">
+            <p>Maze Area</p>
+            <input id="size" type="number" value="500"/></br>
+            <p>Measurements(R/C)</p>
+            <input id="number" type="number" value="20" /></br>
+            <input id="submit" type="submit" value="Play">
+          </form>        
+    </div>
 
-    <canvas class="maze"></canvas>
+    <canvas class="mc"></canvas>
 
     <script src="maze.js"></script>
-    <script src="settings.js"></script>
 </body>
 
 </html>
