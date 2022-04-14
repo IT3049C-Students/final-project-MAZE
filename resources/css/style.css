@@ -25,14 +25,14 @@
     height: 30%;
     background: #000000;
     z-index: 4;
-    padding: 2rem;
+    padding: 32px;
     text-align: center;
     border-radius: 10px;
   }
 
   #controls {
     position: absolute;
-    padding: 1.5rem;
+    padding: 24px;
     top: 50%;
     left: 50%;
     width: 50%;
@@ -42,35 +42,37 @@
     border: 1px solid black;
     border-radius: 10px;
     background-color: #161616;
-    font-size: 0.8rem;
+    font-size: 14px;
     z-index: 2;
   }
 
   #df{
-    display:inline-block;
-    background-color: #161616;
+    position: absolute;
+    padding: 24px;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 30%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    border: none;
-    margin-top: 0.2rem;
-    color: #ffffff;
+    font-size: 14px;
+    z-index: 2;
+    color:#000000;
+  }
+  input {
+    margin-bottom: 16px;
     text-align: center;
-    border: 1px solid #ffffff;
-    padding: 0.4rem;
-    cursor: pointer;
-    margin: 1rem;
-    border-radius: 10px;
   }
-  #df:hover{
-  opacity: 0.7;
+  #size,#number{
+    color:#161616;
   }
-
   .levels{
     display:inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     background-color: #161616;
     text-align: center;
     border: none;
-    margin-top: 0.2rem;
+    margin-top: 3px;
     color: #ffffff;
   }
   
@@ -78,9 +80,9 @@
     background-color: #161616;
     border: 1px solid #ffffff;
     border-radius: 10px;
-    padding: 0.4rem;
+    padding: 6.5px;
     cursor: pointer;
-    margin: 1rem;
+    margin: 16px;
   }
   #submit:hover {
     opacity: 0.7;
