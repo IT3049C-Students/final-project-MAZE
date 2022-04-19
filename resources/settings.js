@@ -9,7 +9,6 @@ let newMaze;
 
 form.addEventListener("submit", generateMaze);
 document.addEventListener("keydown", move);
-
 replay.addEventListener("click", () => {
     location.reload();
 });
