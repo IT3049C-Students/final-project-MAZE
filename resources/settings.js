@@ -1,33 +1,34 @@
-let form = document.getElementById("#controls");
-let size = document.getElementById("#size");
-let rowsCols = document.getElementById("#number");
-let complete = document.getElementById(".after");
-let replay = document.getElementById(".play-again");
-let close = document.getElementById(".quit");
+let form = document.querySelector("#controls");
+let size = document.querySelector("#size");
+let rowsCols = document.querySelector("#number");
+let complete = document.querySelector(".after");
+let replay = document.querySelector("#replay");
+let close = document.querySelector(".quit");
 
 let newMaze;
 
 form.addEventListener("submit", generateMaze);
 document.addEventListener("keydown", move);
+
 replay.addEventListener("click", () => {
     location.reload();
 });
 
 close.addEventListener("click", () => {
     complete.style.display = "none";
-})
+});
 
 function generateMaze(e) {
     e.preventDefault();
 
     if (rowsCols.value == "" || size.value == "") {
-        return alert("Please fill everything out");
+        return alert("The Crypt can't be built without everything!");
     }
 
     let mazeSize = size.value;
     let number = rowsCols.value;
     if (mazeSize > 600 || number > 50) {
-        alert("Too big try again");
+        alert("This Crypt would be too big for you!");
         return;
     }
 
@@ -51,7 +52,6 @@ function move(e) {
                 current = next;
                 newMaze.draw();
                 current.highlight(newMaze.columns);
-                if (current.goal) complete.style.display = "block";
             }
             break;
 
@@ -64,14 +64,13 @@ function move(e) {
                 if (current.goal) complete.style.display = "block";
             }
             break;
-
+        
         case "ArrowLeft":
             if (!current.walls.leftWall) {
                 let next = newMaze.grid[row][col - 1];
                 current = next;
                 newMaze.draw();
                 current.highlight(newMaze.columns);
-                if (current.goal) complete.style.display = "block";
             }
             break;
 
@@ -83,5 +82,6 @@ function move(e) {
                 current.highlight(newMaze.columns);
                 if (current.goal) complete.style.display = "block";
             }
+            break;
     }
 }
