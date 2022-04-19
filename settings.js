@@ -17,6 +17,7 @@ close.addEventListener("click", () => {
   finish.style.display = "none";
 });
 
+// Creating the maze
 function generateMaze(e) {
   e.preventDefault();
 
@@ -38,6 +39,7 @@ function generateMaze(e) {
   newMaze.draw();
 }
 
+// Move the player in the maze
 function move(e) {
   if (!generationComplete) return;
   let key = e.key;
