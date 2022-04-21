@@ -27,7 +27,7 @@ function generateMaze(e) {
 
   let mazeSize = size.value;
   let number = rc.value;
-  if (mazeSize > 600 || number > 50) {
+  if (mazeSize > 900 || number > 90) {
     alert("Maze too large!");
     return;
   }
